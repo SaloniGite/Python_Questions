@@ -384,6 +384,16 @@
 # else:
 #     print("no")
 
+# Q40 Alternate
+# n = int(input("Enter the number: "))
+# sum = 0
+# length = len(str(n))
+
+# for i in str(n):
+#     sum += int(i) ** length
+
+# print(sum)
+
 # Q41
 # n = int(input("enter the no "))
 # copy = n
@@ -464,7 +474,7 @@
 # Q50
 # a = input("enter the word1 to join ")
 # b = input("enter the word2 to join")
-# c = "".join([a,b])
+# c = "".join([a,b]) # used to join the two strings 
 # print(c)
 
 # Q51
@@ -637,8 +647,250 @@
 # for i in range(n):
 #     elem = int(input("enter the elem "))
 #     l.append(elem)
-# for i in l:
-#     sum +=i
+# for i in l:   #here iterating over the list so we are calling the list directly
+#     sum += i
 # print(f"mean = {sum /len(l)}")
 
 # Q66
+# n = int(input("enter the no :"))
+# l = []
+# Maxi = 0
+# index = 0
+# for i in range(n):
+#     elem = int(input("enter the element "))
+#     l.append(elem)
+# for i in range(len(l)) : #here we are iterating over the indexes of the list and value by l[i]
+#     if l[i]>Maxi:
+#         Maxi = l[i]
+#         index = i
+# print(Maxi,index)
+
+# Q67
+# n = int(input("enter the no of elements to ne inserter "))
+# l = []
+
+# for i in range(n):
+#     elem = int(input("enter the element"))
+#     l.append(elem)
+# smallest = l[0]
+# index = 0
+# for i in range(len(l)):
+#     if smallest > l[i]:
+#         smallest = l[i]
+#         index = i
+# print(f"the smallest is {smallest} at index {index}")
+
+# Q68
+# n = int(input("enter the no of element to be inserted :"))
+# l = []
+# index = 0 
+# index2 = 0
+# maxx = 0
+# maxx2 = 0
+# for i in range(n):
+#     elem = int(input("enter the elements "))
+#     l.append(elem)
+# for i in range(len(l)):
+#     if(l[i] > maxx):
+#         maxx2 = maxx
+#         maxx = l[i]
+#         index2 = index
+#         index = i 
+#     elif(l[i] > maxx2 and l[i] < maxx ):
+#         maxx2 = l[i]
+#         index2 = i 
+# print(f"the greatest is {maxx} and index is {index}")
+# print(f"the second greatest is {maxx2} index at {index2}")
+        
+#Q69
+# n = int(input("enter the elements to be inserted :"))
+# l = []
+# flag = True
+# for i in range(n):
+#     elem  = int(input("enter the element "))
+#     l.append(elem)
+# for i in range(len(l)-1):
+#     if l[i] <= l[i+1]:
+#         continue
+#     else:
+#         flag = False
+#         print("not sorted ")
+# if flag == True:
+#     print("sorted ")
+
+# LIST
+# l = [23,45,67,98,12]
+# l[2] = 48
+# print(l)
+
+# Q70
+# n = int(input("enter the no of elements to be inputed : "))
+# l = []
+# for i in range(n):
+#     elem = int(input("enter the element :"))
+#     l.append(elem)
+# reverse_l = list(reversed(l))  #used for revsring of the list 
+# if(l == reverse_l):
+#     print("It is a pallindrome ")
+# else:
+#     print("not a pallindrome")
+
+# FUNCTION QUESTIONS
+# Q1 Square a Number: Write a function that takes a number and returns its square.
+
+# def square(a):
+#     return(a*a)
+# s = square(2)
+# print(s)
+
+# Q2 Convert Celsius to Fahrenheit: Write a function that converts a temperature from Celsius to Fahrenheit.
+# def temp(C):
+#     F = ((C*(9/5))+32)
+#     print(F)
+# temp(12)
+
+# Q3 Write a function that takes a number and returns whether it's even or odd.
+# def no(a):
+#     if(a%2 == 0):
+#         print("the no is even ")
+#     else:
+#         print("no is not even")
+# no(6)
+
+# def no(a):
+    
+#     if(a%2 == 0):
+#         return True
+#     else:
+#         return False
+# if no(4):
+#     print("even")
+# else:
+#     print("odd")
+
+# Q4 Write a function that takes two numbers and returns the absolute difference between them.
+# def diff(a,b):
+#     return a-b
+# d = diff(10,34)
+# print(d)
+
+# Q5 Simple Greeting: Write a function that takes a name as input and returns a greeting message, like "Hello, [name]!".
+# def greet():
+#     print("Hello , Good morning everyone ")
+# greet()
+
+# Q6 String Length: Write a function that returns the length of a given string.
+# def length(a):
+#     return(len(a))
+# l =  length("salomi hite")
+# print(l)
+
+# Q7  Write a function that takes a string and returns it in all uppercase letters.
+# def UPPER(a):
+#     return(a.upper())
+# up = UPPER("itss meee hahaha")
+# print(up)
+
+
+# Q8  Write a function that counts how many times a specific character appears in a string.
+# def chr(a):
+#     str = input("enter the string ")
+#     count = 0 
+#     for i in str:
+#         if(i == a):
+#             count += 1 
+#     return(count)
+# c = chr("a")
+# print(c)
+
+# Q9 Write a function that takes a sentence and counts the number of words in it.
+# def word_count(sentence):
+#     words = sentence.split()
+#     count = len(words)
+#     return(count)
+# c = word_count("Hey  its been a long time ")
+# print(c)
+
+# Q10   Write a function to check if a given string is a palindrome (reads the same backward as forward).
+# def pallindrome_checker(n):
+#     copy = n 
+#     num = 0
+#     while(n>0):
+#         num = num*10 + n%10
+#         n = n//10 
+#     if(num == copy):
+#         return True
+#     else :
+#         return False
+# if pallindrome_checker(222):
+#     print("its a pallindrome")
+# else:
+#     print("not a pallindrome")
+
+# Q11  Sum of List: Write a function that takes a list of numbers and returns the sum of all elements.
+# def sum_l(a):
+#     l = []
+#     total = 0
+#     for i in range(a):
+#        num = int( input("enter the elem "))
+#        l.append(num)
+#     for i in l :
+#         total = total+i 
+#     return(total)
+# s = sum_l(8)
+# print(s)
+
+# Q12 write a function that takes a list of numbers and returns their average.
+# def avg_l(n):
+#     l = []
+#     total = 0 
+#     for i in range(n):
+#         num = int(input("enter the element:"))
+#         l.append(num)
+#     for i in l :
+#         total= total + i
+   
+#     avg = total/len(l)
+#     return(avg)
+# avg = avg_l(4)
+# print(avg)
+
+# Q13 Write a function that takes a list of numbers and returns the smallest and largest numbers.
+# def cal(n):
+#     l = []
+
+   
+#     for i in range(n):
+#         num = int(input("enter the element : "))
+#         l.append(num)
+#     maxx = l[0]
+#     minn = l[0]
+#     for i in range(len(l )):
+#         if(maxx<l[i]):
+#             maxx = l[i]
+#         if(minn>l[i]):
+#             minn = l[i]
+#     return(maxx,minn)
+# comp = cal(6)
+# maxx , minn = comp 
+# print(comp)
+# print(f"the max is {maxx} and min is {minn}")
+
+# Q14  Remove Duplicates: Write a function that takes a list and returns a new list with duplicates removed.
+# def remove_duplicates(old_list):
+#     new_list= []
+#     for items in old_list:
+#         if items not in new_list:
+#             new_list.append(items)
+#     return(new_list)
+# list = [3,3,5 ,6 , 78, 4 ,3 ,5 ]
+# mylist = remove_duplicates(list)
+# print(mylist)
+
+# Q15 Write a function that takes a list and returns it in reverse order.
+# def rev(my_list):
+#     return(list(reversed(my_list)))
+# c_list = [2,3,4,5,6,7,8]
+# s = rev(c_list)
+# print(s)
+
