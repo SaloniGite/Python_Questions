@@ -894,3 +894,134 @@
 # s = rev(c_list)
 # print(s)
 
+# TUPLE (immutable can't be changed and when slicing done a new tuple is returned )
+# a = ( 1, "saloni", 45 , True)
+# print(type(a)) 
+
+# b = (1)
+# print(type(b))  #return int as type as compiler gets confused so we need to add a comma in it 
+
+# ex:
+# c = (3,)
+# print(type(c))  # now it return the type as tuple
+
+# a[2] = "meee"
+# print(a)   # cant change 
+
+# print(a[-1]) # len(a)-(1) = 4-1 = 3 which is True 
+
+# print(a[1:3]) slicing is done same as list 
+
+# TUPLE CAN BE CHANGED BUT NOT DIRECTLY WE NEED TO CONVERT THE TUPPLE INTO LIST THEN CONVERT LIST INTO TUPLE 
+# T = (2 , 3 , 4 , 5 , 6, 7)
+# Temp_list = list(T)
+# Temp_list.append("saloni")
+# Temp_list.pop(2)
+# Temp_list[5] = "memememem"
+# T = tuple(Temp_list)
+# print(T)
+
+# CONCATENATION CAN BE PERFORMED 
+# T = ( 1 , 2, 3, 4,5, 6, 7,8)
+# M = ("slaoni" , "hahah", "meee")
+# new_tuple = T + M 
+# print(new_tuple)
+
+# COUNT
+# no = (1,2,3,4,5,6,42,31,3,1,23,3)
+# count_no = no.count(3)
+# print(count_no)
+
+
+# color = ("blue" , "green" , "yellow" , "blue")
+# item_count = tuple.count("blue")
+# print("item_count")  #count is not for str only for int 
+
+# INDEX (gives the index of the first occurence tuple_name.index(element,start,end))
+# print(no.index(31))
+# print(no.index(3 , 7 , 11))
+
+# LENGTH
+# print(len(no))
+
+# FABONACCI SERIES WITH RECURSIVE FUNCTION 
+# def fibonacci(n):
+#     if n <= 1:
+#         return n  # Base case: return n if it's 0 or 1
+#     else:
+#         return fibonacci(n - 1) + fibonacci(n - 2)  # Recursive case
+
+# # Driver code to display the series
+# terms = int(input("Enter the number of terms: "))
+# if terms <= 0:
+#     print("Please enter a positive integer.")
+# else:
+#     print("Fibonacci Series:")
+#     for i in range(terms):
+#         print(fibonacci(i), end=" ")
+
+# # FABONACCI SERIES WITH FUNC
+
+# def FAB(n):
+#     if n <= 0:
+#         print("Provide a positive number.")
+#     elif n == 1:
+#         print("Fibonacci Series: 0")
+#     elif n == 2:
+#         print("Fibonacci Series: 0 1")
+#     else:
+#         a, b = 0, 1
+#         print("Fibonacci Series:", end=" ")
+#         print(a, b, end=" ")
+#         for i in range(2, n):
+#             c = a + b
+#             print(c, end=" ")
+#             a, b = b, c
+#     return
+
+# # Driver code
+# terms = int(input("Enter the number of terms: "))
+# FAB(terms)
+
+# RECURSION
+# Q1:Write a recursive function to reverse a string.
+# def rev_str(s):
+#     if len(s)==0:
+#         return s
+#     else:
+#         return s[-1]+ rev_str(s[:-1])
+
+# str = input("enter the string :")
+# print(rev_str(str))
+
+# Q2: Write a recursive function to find the sum of all elements in a list.
+# def count_l(l):
+#     if len(l) == 0:
+#         return 0 
+#     else:
+#         return l[0] + count_l(l[1:])
+# list_n = [23 ,45,56,67,68,98,99]
+# print(count_l(list_n))
+
+# Q3: Count Vowels in a String
+# def count_vowel(str):
+#     if len(str) == 0:
+#         return 0
+#     else:
+#         return(1 if str[0].lower() in 'aeiou' else 0) + count_vowel(str[1:])
+# print(count_vowel("dalojhaiofa"))
+
+# Q4: Write a recursive function to find the smallest element in a tuple.
+# def sm_elem(t):
+#     if len(t) == 1:
+#         return t[0]
+#     else:
+#         return min(t[0] , sm_elem(t[1:]))
+# tm = (1,2,3,2,1)
+# print(sm_elem(tm))
+
+#Q5: Write a recursive function to check if a string is a palindrome.
+# def is_palindrome(s):
+#     if len(s) <= 1:
+#         return True
+#     return s[0] == s[-1] and is_palindrome(s[1:-1])
