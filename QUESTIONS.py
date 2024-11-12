@@ -1025,3 +1025,51 @@
 #     if len(s) <= 1:
 #         return True
 #     return s[0] == s[-1] and is_palindrome(s[1:-1])
+
+
+
+# 71) List left Rotation by 1
+
+# l = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+# n = 1
+
+# for i in range(n):
+#     temp = l[0]
+    
+#     for j in range(len(l)-1):
+#         l[j] = l[j+1]
+
+#     l[len(l)-1] = temp
+
+# print(l)
+
+# 72) List right Rotation by 1
+
+# l = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+# n = 1
+
+# for i in range(n):
+#     temp = l[len(l)-1]
+
+#     for j in range(len(l)-1,-1,-1):
+#         l[j] = l[j-1]
+    
+#     l[0] = temp
+
+# print(l)
+
+# 73) List left rotation by K elements
+
+# l = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+# x = int(input("Enter the number of elements to rotate the list : "))
+
+# for i in range(x):
+#     flag = l[0]
+
+#     for s in range(len(l)-1):
+#         l[s] = l[s+1]
+
+#     l[len(l)-1] = flag
+
+# print(l)
+
