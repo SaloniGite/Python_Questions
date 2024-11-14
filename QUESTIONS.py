@@ -1073,3 +1073,29 @@
 
 # print(l)
 
+
+# 74) List right rotation by K elements
+
+# l = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+# x = int(input("Enter a number to rotate the list : "))
+
+# for i in range(x):
+#     flag = l[len(l)-1]
+
+#     for s in range(len(l)-1,-1,-1):
+#         l[s] = l[s-1]
+
+#     l[0] = flag
+
+# print(l)
+
+# 75) List Reverse Using Extra space
+# using extra space means that we can use another list that is empty as we have done previously
+
+# l = [1,2,3,4,5,6,7]
+# l2 = []
+
+# for i in range(len(l)-1,-1,-1):
+#     l2.append(l[i])
+
+# print(l2)
