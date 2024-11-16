@@ -1099,3 +1099,81 @@
 #     l2.append(l[i])
 
 # print(l2)
+
+
+# 76) List Reverse Without Using Extra space
+# without using extra space means we can't store data in another list or empty variable
+
+# l = [1,2,3,4,5,6,7,8,9,10]
+
+# i = 0
+# end = len(l)-1
+
+# for i in range(len(l)//2):
+#     l[i],l[len(l)-i-1] = l[len(l)-i-1],l[i]
+
+#     i+= 1
+#     end -= 1
+
+# print(l)
+
+#----------------------------------->>>> using while loop <<<<---------------------------------------------
+
+# l = [1,2,3,4,5,6,7,8,9,10]
+
+# i = 0
+# s = len(l)-1
+
+# while i < s:
+#     l[i],l[len(l)-i-1] = l[len(l)-i-1],l[i]
+
+#     i += 1
+#     s -= 1
+
+# print(l)
+
+# 77) Linear Search an List - If element found print the index else -1
+
+# l = [43, 12, 76, 32, 90, 54, 23, 67, 89, 14, 31, 78, 45, 9, 61]
+
+# x = int(input("Enter the element of the list u want to find : "))
+# flag = False
+
+# for i in range(len(l)):
+#     if l[i] == x:
+#         flag = True
+#         break
+
+#     else:
+#         flag = False
+
+# if flag == True:
+#     print(f"The element {x} was found at index : {i}")
+
+# else:
+#     print(-1)
+
+# 78) Binary Search. If element found print the index else -1
+
+# l = [43, 12, 76, 32, 90, 54, 23, 67, 89, 14, 31, 78, 45, 9, 61]
+
+# x = int(input("Enter the element to find : "))
+# i = 0
+# s = len(l)-1
+# flag = False
+
+# while i < s:  # using 2 - pointer technique
+#     if l[i] == x or l[s] == x:
+#         flag = True
+#         break
+
+#     else:         # this is a two pointer method so can be applied when the list is not sorted and is not pure binary search
+#         flag = False
+
+#     i += 1
+#     s -= 1
+
+# if flag:
+#     print(f"The element {x} was found at index : {i}")
+# else:
+#     print(-1)
