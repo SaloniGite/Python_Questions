@@ -1177,3 +1177,18 @@
 #     print(f"The element {x} was found at index : {i}")
 # else:
 #     print(-1)
+
+# 79) Move all the negative elements on left side and positive elements on right side with extra space in O(n).
+
+# l = [43, -12,-76, 32, -90, 54,-23, 67, 89, -14, 31, -78, 45,- 9, 61]
+# l2 = []
+# l3 = []
+
+# for i in range(len(l)):
+#     if l[i] < 0:
+#         l2.append(l[i])
+
+#     else:
+#         l3.append(l[i])
+
+# print(l2+l3)
