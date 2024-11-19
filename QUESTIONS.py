@@ -1192,3 +1192,26 @@
 #         l3.append(l[i])
 
 # print(l2+l3)
+
+
+# 80) Move all the negative elements on left side and positive elements on right side without extra space in O(n).
+
+# l = [43, -12,-76, 32, -90, 54,-23, 67, 89, -14, 31, -78, 45,- 9, 61]
+
+# i = 0
+# s = len(l)-1
+
+# while i <= s:
+        
+#     if l[i] < 0:
+#         i += 1
+
+#     elif l[s] >= 0:
+#         s -= 1
+
+#     else:
+#         l[i],l[s] = l[s],l[i]
+#         i += 1
+#         s -= 1 
+
+# print(l)
