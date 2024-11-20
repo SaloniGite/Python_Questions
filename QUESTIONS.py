@@ -1215,3 +1215,77 @@
 #         s -= 1 
 
 # print(l)
+
+
+# 81) Bubble Sort.
+
+# l = [43, 12, 76, 32, 90, 54, 23, 67, 89, 14, 31, 78, 45, 9, 61]
+
+# for i in range(len(l)):
+#     for s in range(len(l)-1):
+#         if l[s] > l[s+1]:
+#             l[s],l[s+1] = l[s+1],l[s]
+
+# print(l)
+
+# 82) Median of List elements
+
+# l = [43, 12, 76, 32, 90, 54, 23, 67, 89, 14, 31, 78, 45, 9, 61,33]
+# l.sort()
+# n = len(l)
+
+# if len(l) % 2 != 0:
+#     median = (n-1)//2
+#     mid = l[median]
+    
+# else:
+#     median = n//2
+#     median2 = median - 1
+#     mid = (l[median] + l[median2])/2
+
+# print("The median of the given list is",mid)
+
+# 83) Strong number using methods
+
+# x = int(input("Enter a number to check if its a strong number or not : "))
+# copy = x
+# sum = 0
+
+# def factorial(a):
+#     fact = 1
+#     for i in range(1,a+1):
+#             fact *= i
+#     return fact
+
+# while x > 0:
+#       z = x % 10
+#       sum += factorial(z)
+#       x //= 10
+
+# if sum == copy:
+#       print("Yess It's a strong number......")
+
+# else:
+#       print("No.... It's not a strong number !!!!")
+
+# 84) Number of even and odd elements in an List
+
+# l = [43, 12, 76, 32, 90, 54, 23, 67, 89, 14, 31, 78, 45, 9, 61,33]
+
+# count = 0
+# count2 = 0
+
+# for i in l:
+#     if i % 2 == 0:
+#         count += 1
+#     else:
+#         count2 += 1
+    
+# print(f"The number of ev
+
+# for i in dict:
+#     sum += dict[i]
+
+# print("The sum of all the values in the dictionaty is",sum)
+
+# 89) Convert a list to dictionary 
