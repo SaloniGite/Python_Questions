@@ -1289,3 +1289,18 @@
 # print("The sum of all the values in the dictionaty is",sum)
 
 # 89) Convert a list to dictionary 
+
+
+# 90) count the frequency of each elements
+
+# dict = {'apple': 2, 'banana': 3, 'orange': 2, 'grape': 1, 'kiwi': 3}
+# dict2 = {}
+
+# for i in dict.values():             # .values() is used to get the values of the key
+#     if i in dict2:
+#         dict2[i] += 1 
+    
+#     else:
+#         dict2[i] = 1
+
+# print(dict2)
