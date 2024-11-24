@@ -1304,3 +1304,23 @@
 #         dict2[i] = 1
 
 # print(dict2)
+
+
+
+# 91) Write a Python program to combine two dictionary by adding values for common keys.
+
+# dict1 = {'a': 10, 'b': 20, 'c': 30}
+# dict2 = {'b': 5, 'c': 15, 'd': 25}
+
+# dict3 = {}
+
+# dict3 = dict1.copy()
+
+# for i,s in dict2.items():
+#     if i in dict3:
+#         dict3[i] += s
+
+#     else:
+#         dict3[i] = s
+
+# print(dict3)
