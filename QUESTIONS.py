@@ -1324,3 +1324,25 @@
 #         dict3[i] = s
 
 # print(dict3)
+
+
+
+# 92) replace the maximum appearing number in a list with 0
+
+# dict = {'a': 5, 'b': 8, 'c': 5, 'd': 3, 'e': 8, 'f': 3, 'g': 5}
+# dict2 = {}
+
+# for i in dict.values():
+#     if i in dict2:
+#         dict2[i] += 1
+
+#     else:
+#         dict2[i] = 1
+
+# max_appearing_value = max(dict2, key = dict2.get) # this line gives the maximum occuring key .get() is used to get value of the key
+
+# for i,s in dict.items():
+#     if dict[i] == max_appearing_value:
+#         dict[i] = 0
+
+# print(dict)
