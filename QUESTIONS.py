@@ -1346,3 +1346,20 @@
 #         dict[i] = 0
 
 # print(dict)
+
+
+# 93) Right Triangle - Star
+
+#       	*
+#       	* *
+# 	        * * *
+#       	* * * *
+#       	* * * * *
+
+# x = int(input("Enter the number of rows in the pattern : "))
+
+# for i in range(1,x+1):
+#     for j in range(1,i+1):
+#         print("*",end="")
+    
+#     print(" ")
