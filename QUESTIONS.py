@@ -1363,3 +1363,20 @@
 #         print("*",end="")
     
 #     print(" ")
+
+
+# 94) Right Triangle - Number
+
+#    	1                            #   1
+# 	    1 2                          #   22
+# 	    1 2 3                OR      #   333
+#   	1 2 3 4                      #   4444          
+#   	1 2 3 4 5                    #   55555
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+
+# for i in range(1,x+1):
+#     for j in range(1,i+1):          # 2nd loop me j lene pe 1st wala pattern aata h and i lene pe 2nd wala
+#         print(j,end='')
+    
+#     print("")
