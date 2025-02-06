@@ -1380,3 +1380,54 @@
 #         print(j,end='')
     
 #     print("")
+
+# #------------------------------------------>>>>>  OR  <<<<<--------------------------------------------------
+    
+# x = int(input("Enter the number of rows t0 print the pattern : "))
+
+# for i in range(1,x+1):
+#     for j in range(1,i+1):
+#         print(i,end="")
+
+#     print("")
+
+# 95) Right Triangle - Alphabet
+
+#        	A                               # A
+# 	        A B                             # BB
+# 	        A B C            OR             # CCC
+# 	        A B C D                         # DDDD
+# 	        A B C D E                       # EEEEE
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+
+# for i in range(65,x+65):         # use ascii values for the alphabets and then convert them into the char form
+#     for j in range(65,i+1):      # ascii values of A is 65
+#         print(chr(j),end="")        
+    
+#     print("")
+
+# # ================================>>>>> OR <<<<<==========================================
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+
+# for i in range(65,x+65):
+#     for j in range(65,i+1):
+#         print(chr(i),end="")
+
+#     print("")
+
+# 96) Inverted Right Triangle
+
+#    	* * * * *
+#   	* * * *
+#   	* * *
+#   	* *
+# 	    *
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+
+# for i in range(x-1,-1,-1):
+#     for j in range(i,-1,-1):
+#         print("*",end="")
+#     print("")
