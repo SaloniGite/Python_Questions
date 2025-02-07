@@ -1431,3 +1431,32 @@
 #     for j in range(i,-1,-1):
 #         print("*",end="")
 #     print("")
+
+
+# 97) Mirrored Right Triangle
+
+# 	            *
+# 	          * *
+# 	        * * *
+# 	      * * * *
+#   	* * * * *
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+
+# for i in range(x):
+
+#     for j in range(x-i-1):
+#         print(" ",end="")
+
+#     for j in range(i+1):
+#         print("*",end="")
+
+#     print()
+
+# =================================>>>>> using single for loop <<<<<=============================================
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+
+# for i in range(x):
+#     print(" "*(x-i-1) + "*"*(i+1))  # this is string multiplication method
+
