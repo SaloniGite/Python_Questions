@@ -1460,3 +1460,29 @@
 # for i in range(x):
 #     print(" "*(x-i-1) + "*"*(i+1))  # this is string multiplication method
 
+
+# 98) Mirrored Inverted Right Triangle
+
+#      	* * * * *
+#   	  * * * *
+# 	        * * *
+# 	          * *
+# 	            *
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+
+# for i in range(x+1):
+#     print(" "*(i+1) + "*"*(x-i))
+
+# ------------------------------------------------>>>> OR <<<<----------------------------------------------------
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+# k = 0
+# z = x
+
+# for i in range(1,x+1):
+        
+#     print(" "*k,"*"*z,end="")
+#     k += 1
+#     z -= 1 
+#     print()
