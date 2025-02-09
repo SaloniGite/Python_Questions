@@ -1486,3 +1486,39 @@
 #     k += 1
 #     z -= 1 
 #     print()
+
+
+# 99) Triangle
+
+# 	    *                                *
+# 	   * *                              ***
+# 	  * * *             OR             *****
+# 	 * * * *                          *******      (2nd pattern) 
+# 	* * * * *	                     *********
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+
+# for i in range(x):
+    
+#     for j in range(x-i-1):
+#         print(" ",end="")
+    
+#     for j in range(i+1):        # use range(2*i+1) and no space in end="" to print the 2nd patterm
+#         print("*",end=" ")
+    
+#     print("")
+
+# -------------------------------------->>> OR <<<---------------------------------------------
+
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+
+# for i in range(x):
+    
+#     for j in range(x-i-1):
+#         print(" ",end="")
+    
+#     for j in range(2*i+1):        # like this
+#         print("*",end="")
+    
+#     print("")
