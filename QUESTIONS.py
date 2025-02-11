@@ -1558,3 +1558,42 @@
 #         print("*",end="")
     
 #     print("")
+
+
+
+# 101) Diamond or Kite
+
+# 	     *      
+# 	    * *     
+# 	   * * *    
+# 	  * * * *   
+# 	 * * * * *  
+# 	* * * * * * 
+# 	 * * * * *  
+# 	  * * * *   
+# 	   * * *    
+# 	    * *     
+# 	     *   
+
+# x = int(input("Enter the number of rows to print the pattern : "))
+
+# for i in range(0,x):
+    
+#     for j in range(0, x-i-1):
+#         print(" ",end="")
+
+#     for j in range(0,i+1):
+#         print("*",end=" ")
+    
+#     print("")
+
+# for i in range(0, x-1):
+
+#     for j in range(0,i+1):
+#         print(" ",end="")
+
+#     for j in range(0, x-i-1):
+#         print("*",end=" ")    
+    
+#     print("")
+
