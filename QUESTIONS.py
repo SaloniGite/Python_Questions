@@ -1620,3 +1620,16 @@
 
 # lst = [1, 2, 3, 2, 1, 4, 5, 4]
 # print(remove_duplicates(lst))  
+
+
+
+# def is_automorphic(n):
+#     square = n**2
+#     digit = len(str(n))
+#     last_digit = square%(10**digit)
+#     return last_digit == n
+# num = int(input("enter the no "))
+# if is_automorphic(num):
+#     print("automorphic")
+# else:
+#     print("Not Automorphic ")
