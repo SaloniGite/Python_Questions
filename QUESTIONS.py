@@ -517,6 +517,11 @@
 # print("the lenght of strs is ",len(a))
 # print("the copy of str is ",copy)
 
+# REv through slicing 
+# str1 = input("enter the str ")
+# rev = str[::-1]
+# print(rev)
+
 # Q55
 # a = input("enter the str1")
 # b = input("enter the str2")
