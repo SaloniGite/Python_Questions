@@ -1638,3 +1638,25 @@
 #     print("automorphic")
 # else:
 #     print("Not Automorphic ")
+
+
+def longest_consecutive_sequence(nums):
+    num_set = set(nums)  # Convert list to a set for O(1) lookup
+    longest_streak = 0
+
+    for num in num_set:
+        if num - 1 not in num_set:  # Check if it's the start of a sequence
+            current_num = num
+            current_streak = 1
+
+            while current_num + 1 in num_set:  # Count consecutive numbers
+                current_num += 1
+                current_streak += 1
+
+            longest_streak = max(longest_streak, current_streak)
+
+    return longest_streak
+
+# Example usage
+nums = [100, 4, 200, 1, 3, 2, 5, 101, 102, 103]
+print(longest_consecutive_sequence(nums))  # Output: 5
