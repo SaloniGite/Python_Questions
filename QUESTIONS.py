@@ -593,18 +593,18 @@
 # print(list(reversed(l)))
 
 # Q61
-# n = int(input("enter the no of element : "))
-# l = [0,1]
-# a = l[0]
-# b = l[1]
-# c = 0
-# for i in range(n):
+# x = int(input("Enter the no in a Fibonacci series :"))
+# l = []
+# a = 0
+# b = 1
+
+# for i in range(x):
+#     l.append(a)
 #     c = a+b
 #     a = b
 #     b = c
-#     l.append(c)
+   
 # print(l)
-
 # Q62
 # l = [23 , -33 , 98 , -45 , 99]
 # neg = []
@@ -631,6 +631,13 @@
 # n = [int(i) for i in n]
 # n.sort(reverse=True)          #for int only 
 # print(n)
+
+
+# elem = input("enter the elem :").split()
+# elem = list(map(int,elem))
+# elem.sort(reverse=True)
+# print(elem)
+
 
 # Q64
 # n = int(input("enter the elements in the list "))
@@ -722,6 +729,26 @@
 #         print("not sorted ")
 # if flag == True:
 #     print("sorted ")
+
+
+# l = [4,5,4,3,2]
+# asec_flag = True
+# desc_flag = True 
+# for i in range(len(l)-1):
+#     if(l[i]<=l[i+1]):
+#        pass
+#     else:
+#         asec_flag = False
+#     if(l[i]>=l[i+1]):
+#        continue
+#     else:
+#         desc_flag = False
+# if asec_flag :
+#     print("aesc")
+# elif desc_flag :
+#     print("desc")
+# else :
+#     print("not sorted")
 
 # LIST
 # l = [23,45,67,98,12]
@@ -1640,23 +1667,23 @@
 #     print("Not Automorphic ")
 
 
-def longest_consecutive_sequence(nums):
-    num_set = set(nums)  # Convert list to a set for O(1) lookup
-    longest_streak = 0
+# def longest_consecutive_sequence(nums):
+#     num_set = set(nums)  # Convert list to a set for O(1) lookup
+#     longest_streak = 0
 
-    for num in num_set:
-        if num - 1 not in num_set:  # Check if it's the start of a sequence
-            current_num = num
-            current_streak = 1
+#     for num in num_set:
+#         if num - 1 not in num_set:  # Check if it's the start of a sequence
+#             current_num = num
+#             current_streak = 1
 
-            while current_num + 1 in num_set:  # Count consecutive numbers
-                current_num += 1
-                current_streak += 1
+#             while current_num + 1 in num_set:  # Count consecutive numbers
+#                 current_num += 1
+#                 current_streak += 1
 
-            longest_streak = max(longest_streak, current_streak)
+#             longest_streak = max(longest_streak, current_streak)
 
-    return longest_streak
+#     return longest_streak
 
-# Example usage
-nums = [100, 4, 200, 1, 3, 2, 5, 101, 102, 103]
-print(longest_consecutive_sequence(nums))  # Output: 5
+# # Example usage
+# nums = [100, 4, 200, 1, 3, 2, 5, 101, 102, 103]
+# print(longest_consecutive_sequence(nums))  # Output: 5
