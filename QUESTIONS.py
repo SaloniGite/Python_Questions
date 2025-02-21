@@ -1687,3 +1687,11 @@
 # # Example usage
 # nums = [100, 4, 200, 1, 3, 2, 5, 101, 102, 103]
 # print(longest_consecutive_sequence(nums))  # Output: 5
+
+
+# def remove_duplicates(lst):
+#     seen = set()
+#     return [x for x in lst if not (x in seen or seen.add(x))]
+
+# lst = [1, 2, 3, 1, 2, 4, 5, 6, 4, 7]
+# print(remove_duplicates(lst))  
