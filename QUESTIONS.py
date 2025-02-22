@@ -1695,3 +1695,77 @@
 
 # lst = [1, 2, 3, 1, 2, 4, 5, 6, 4, 7]
 # print(remove_duplicates(lst))  
+
+# list comprehension 
+# lst = [ i for i in range(4)]
+# print((lst))
+
+# Create a list of numbers from 1 to 10
+# lst  = [i for i in range(1,11)]
+# print(lst)
+
+# Generate a list of squares of numbers from 1 to 10
+# lst  = [i**2 for i in range(1,11) ]
+# print(lst)
+
+# lst = [i for i in range(1,21) if(i%2 == 0)]
+# print(lst)
+
+# celsius = [0, 10, 20, 30, 40]
+# fahrenheit = [(c * 9/5) + 32 for c in celsius]
+# print(fahrenheit)
+
+# strr = "saloni"
+# vowel = [i for i in strr if(i=="a" or i == "e" or i =="i" or i =="o" or i == "u")]
+# print(vowel)
+
+# numbers = [1, 5, 8, 12, 15, 22, 27]
+# Odd_no = [i for i in numbers if(i%2 != 0)]
+# # print(Odd_no)
+
+# sentence = "Python list comprehension is powerful"
+# first_letter = [word[0] for word in sentence.split()]
+# print(first_letter)
+# first_word = []
+# words = sentence.split()
+# for i in words:
+#     first_word.append(i[0])
+# print(first_word)
+
+# sentence = "The fox jumps over the lazy dog"
+# lst = [i for i in sentence.split() if(len(i)>3)]
+# print(lst)
+
+# words = ["hello", "world", "python"]
+# rev_words = [i[::-1] for i in words]
+# print(rev_words)
+
+# This optimization reduces the time complexity from O(n) to O(√n), making it much faster.
+# dont use num  - 1 inc complexity 
+# prime no 1-50
+# lst = [i for i in range(1,51) if all(i % j != 0 for j in range(2,int(i**0.5)+1) ) ]
+# print(lst)
+
+# list1 = [1, 2, 3, 4, 5]
+# list2 = [3, 4, 5, 6, 7]
+# lst = [num for num in list1 if num in list2]
+# print(lst)
+
+# list1 = [1, 2]
+# list2 = ['a', 'b']
+# lst = [(x,y) for x in list1 for y in list2]
+# print(lst)
+
+# text = "Today is 25th of June 2023"
+# numbers = [int(num) for num in text.split() if num.isdigit()]
+# print(numbers)  
+
+
+
+# text = "Today is 25th of June 2023"
+# numbers = [int(num) for num in text.split() if num.isdigit()]
+# print(numbers)  
+
+# fib = [0, 1]
+# [fib.append(fib[-1] + fib[-2]) for _ in range(8)]
+# print(fib)
