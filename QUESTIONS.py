@@ -1771,33 +1771,163 @@
 # print(fib)
 
 
-class Solution:
-    def spiralOrder(self, matrix):
-        res = []
-        top, bottom = 0, len(matrix) - 1
-        left, right = 0, len(matrix[0]) - 1
+# class Solution:
+#     def spiralOrder(self, matrix):
+#         res = []
+#         top, bottom = 0, len(matrix) - 1
+#         left, right = 0, len(matrix[0]) - 1
 
-        while top <= bottom and left <= right:
-            # Top row
-            for i in range(left, right + 1):
-                res.append(matrix[top][i])
-            top += 1
+#         while top <= bottom and left <= right:
+#             # Top row
+#             for i in range(left, right + 1):
+#                 res.append(matrix[top][i])
+#             top += 1
 
-            # Right column
-            for i in range(top, bottom + 1):
-                res.append(matrix[i][right])
-            right -= 1
+#             # Right column
+#             for i in range(top, bottom + 1):
+#                 res.append(matrix[i][right])
+#             right -= 1
 
-            if top <= bottom:
-                # Bottom row
-                for i in range(right, left - 1, -1):
-                    res.append(matrix[bottom][i])
-                bottom -= 1
+#             if top <= bottom:
+#                 # Bottom row
+#                 for i in range(right, left - 1, -1):
+#                     res.append(matrix[bottom][i])
+#                 bottom -= 1
 
-            if left <= right:
-                # Left column
-                for i in range(bottom, top - 1, -1):
-                    res.append(matrix[i][left])
-                left += 1
+#             if left <= right:
+#                 # Left column
+#                 for i in range(bottom, top - 1, -1):
+#                     res.append(matrix[i][left])
+#                 left += 1
 
-        return res
+#         return res  
+
+# l1 = [1,2,3,4,5]
+# l2 = l1 
+# l2[3] = 66
+# print(l1,l2)
+# as reference to same memory so both change 
+
+# # NESTED LIST 
+
+
+# fruits = [["banana","grapes"],["mango" , "watermelon"], ["apple" , "kiwi" ,"pineapple "]]
+# print(fruits[0]) # output = ['banana', 'grapes']
+# print(fruits[0][1]) #grapes
+# print(fruits[2][:])
+# print(fruits[2][0:2])
+# print(fruits[2][: : 2])
+
+# changing elem :
+# fruits[0][1]  = "lion "
+# print(fruits)
+
+# Adding an element 
+# fruits[0].append("giraffe") 
+# print(fruits)
+
+# Adding a sublist 
+# fruits.append(["hahah","hhihii","yoyoyo"])
+# print(fruits)
+
+# fruits[0].remove("banana")
+# print(fruits)
+
+# del fruits[1]
+# print(fruits)
+
+# print(len(fruits))
+# fruits.extend(["yellow","orange"])
+# print(fruits)
+
+# fruits = [["banana","grapes"],["mango" , "watermelon"], ["apple" , "kiwi" ,"pineapple "]]
+# rem_list = fruits.pop()
+# print(rem_list)
+# copy_list = fruits.copy()
+# copy_list[0][0] = "changed"
+# print(copy_list,fruits)
+
+# import copy 
+# deep__copy = copy.deepcopy(fruits)
+# deep__copy[0][0] = "changed"
+# print(deep__copy)
+# print(fruits)
+
+# creating a nested list with split 
+# user_input = [  i.split(",")   for i in  input("enter the nested list sep(; or , )").split(";")]
+# print("nested list :" , user_input)
+
+# nested_list = input("enter the nested list :").split(";")
+# result = []
+# for i in nested_list:
+#     list = i.split(",")
+#     result.append(list)
+# print(result)
+# print(nested_list)
+# print(list)
+
+
+# LIST COOMPRHENSION 
+# lisst = [i for i in range(1,11)]
+# print(lisst)
+
+# NUMPY ARRANGE 
+# import numpy as np 
+# li = np.arange(1,11).tolist()
+# print(li)
+
+
+# import operator as operator
+# a = list(range(1,100))
+# b = list(range(1,100))
+
+# result = list(map(operator.mul,a,b))
+# print(result)
+
+# listt = [a*b for a,b in zip(a,b)]
+# print(listt)
+
+# ITERTOOLS 
+# LOOP :
+
+# from itertools import count 
+# for  i in count(1):
+#     if(i>20):
+#         break
+#     print(i)
+
+# from itertools import cycle 
+# for i , val in  enumerate(cycle("ABVH")):
+#     if(i>5):
+#         break
+#     print(val)
+
+# from itertools import repeat
+# print(list(repeat("Hello" , 4)))
+
+# PERMUTATION AND COMBINATION 
+# from itertools import permutations , combinations , combinations_with_replacement
+
+# print(list(permutations("ABCD" , 3)))
+# print(list(combinations("SAMI",2)))
+# print(list(combinations_with_replacement("SAMI",2)))
+
+class Solution(object):
+    def insert(self, intervals, newInterval):
+        merged = []
+        i = 0
+
+        while i < len(intervals) and intervals[i][1] < newInterval[0]:
+            merged.append(intervals[i])
+            i += 1
+        
+        while i < len(intervals) and intervals[i][0] <= newInterval[1]:
+            newInterval = [min(newInterval[0], intervals[i][0]), max(newInterval[1], intervals[i][1])]
+            i += 1
+        merged.append(newInterval)
+        
+        while i < len(intervals):
+            merged.append(intervals[i])
+            i += 1
+        
+        return merged
