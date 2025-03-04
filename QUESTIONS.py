@@ -1983,23 +1983,45 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-class Solution:
-    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        if head==None or head.next==None or k==0:
-            return head
-        l=1
-        curr=head
-        while curr.next:
-            curr=curr.next
-            l+=1
-        r=k%l
-        k=l-r
-        curr.next=head
-        while k>0:
-            curr=curr.next
-            k-=1
-        head=curr.next
-        curr.next = None
-        return head
+# class Solution:
+#     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+#         if head==None or head.next==None or k==0:
+#             return head
+#         l=1
+#         curr=head
+#         while curr.next:
+#             curr=curr.next
+#             l+=1
+#         r=k%l
+#         k=l-r
+#         curr.next=head
+#         while k>0:
+#             curr=curr.next
+#             k-=1
+#         head=curr.next
+#         curr.next = None
+#         return head
 
         
+
+from math import factorial
+
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        if m == 1: # move straight, one way
+            return 1
+        if n == 1: # also move straight
+            return 1
+
+        # swap the numbers to avoid using comparisons between them
+        m, n = min(n,m), max(n,m) 
+
+        m -= 1 # you need to make M-1 step to reach target
+        n -= 1 # you need to make N-1 step to reach target
+        n = n+m # total number of steps you need to make
+
+        # combination formula
+        return factorial(n)//factorial(m)//factorial(n-m)
+
+        # ^ it shows how many combinations we have 
+        # if choose go down or go right
