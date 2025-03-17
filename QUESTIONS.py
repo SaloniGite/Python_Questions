@@ -2279,16 +2279,30 @@
 
 
 
+# class Solution:
+#     def climbStairs(self, n: int) -> int:
+#         dp=[-1]*(n+2)
+#         def solve(i):
+#             if i==0 or i==1:
+#                 return 1
+#             if dp[i]!=-1:
+#                 return dp[i]
+#             left=solve(i-1)
+#             right=solve(i-2)
+#             dp[i]=left+right
+#             return left+right
+#         return solve(n)
+
+
 class Solution:
-    def climbStairs(self, n: int) -> int:
-        dp=[-1]*(n+2)
-        def solve(i):
-            if i==0 or i==1:
-                return 1
-            if dp[i]!=-1:
-                return dp[i]
-            left=solve(i-1)
-            right=solve(i-2)
-            dp[i]=left+right
-            return left+right
-        return solve(n)
+    def sortColors(self, nums: List[int]) -> None:
+        count = {}
+        for i in range(len(nums)):
+            count[nums[i]] = count.get(nums[i], 0) + 1
+        
+        idx = 0
+
+        for color in range(3):
+            freq = count.get(color, 0)
+            nums[idx : idx + freq] = [color] * freq
+            idx += freq
