@@ -2294,15 +2294,61 @@
 #         return solve(n)
 
 
-class Solution:
-    def sortColors(self, nums: List[int]) -> None:
-        count = {}
-        for i in range(len(nums)):
-            count[nums[i]] = count.get(nums[i], 0) + 1
+# class Solution:
+#     def sortColors(self, nums: List[int]) -> None:
+#         count = {}
+#         for i in range(len(nums)):
+#             count[nums[i]] = count.get(nums[i], 0) + 1
         
-        idx = 0
+#         idx = 0
 
-        for color in range(3):
-            freq = count.get(color, 0)
-            nums[idx : idx + freq] = [color] * freq
-            idx += freq
+#         for color in range(3):
+#             freq = count.get(color, 0)
+#             nums[idx : idx + freq] = [color] * freq
+#             idx += freq
+# def bubble_sort(n,arr):
+#     count = 0
+#     for i in range(0,n):
+#         flag = 0 
+#         for j in range(0,n-i-1):
+#             if arr[j] > arr[j+1]:
+#                 arr[j],arr[j+1] = arr[j+1] , arr[j]
+#                 flag = 1
+#                 count += 1 
+#         if(flag == 0):
+#             break
+#     print(count)
+#     return arr 
+# n = int(input())
+# arr = list(map(int,input().split()))
+# print(bubble_sort(n,arr))
+
+
+# def bubble_sort(n,arr):
+#     count = 0
+#     for i in range(0,n):
+#         flag = 0 
+#         if(i == 2):
+#             return arr 
+#         for j in range(0,n-i-1):
+#             if arr[j] > arr[j+1]:
+#                 arr[j],arr[j+1] = arr[j+1] , arr[j]
+#                 flag = 1
+#                 count += 1 
+#         if(flag == 0):
+#             break
+ 
+#     return arr 
+# n = int(input())
+# arr = list(map(int,input().split()))
+# print(bubble_sort(n,arr))
+
+# in and not in array 
+
+arr = [5, 2, 9, 1]
+arr.sort(reverse=True)
+print(arr)
+
+arr = [5, 2, 9, 1, 5, 6]
+arr.sort()
+print(arr)
