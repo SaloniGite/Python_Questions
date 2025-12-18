@@ -2345,10 +2345,85 @@
 
 # in and not in array 
 
-arr = [5, 2, 9, 1]
-arr.sort(reverse=True)
-print(arr)
+# arr = [5, 2, 9, 1]
+# arr.sort(reverse=True)
+# print(arr)
 
-arr = [5, 2, 9, 1, 5, 6]
-arr.sort()
-print(arr)
+# arr = [5, 2, 9, 1, 5, 6]
+# arr.sort()
+# print(arr)
+
+
+
+
+
+# class Solution:
+#     def generateMatrix(self, n: int) -> List[List[int]]:
+#         if not n:
+#             return []
+#         matrix = [[0 for _ in range(n)] for _ in range(n)]
+#         left, right, top, bottom, num = 0, n-1, 0, n-1, 1
+#         while left <= right and top <= bottom:
+#             for i in range(left, right+1):
+#                 matrix[top][i] = num 
+#                 num += 1
+#             top += 1
+#             for i in range(top, bottom+1):
+#                 matrix[i][right] = num
+#                 num += 1
+#             right -= 1
+#             if top <= bottom:
+#                 for i in range(right, left-1, -1):
+#                     matrix[bottom][i] = num
+#                     num += 1
+#                 bottom -= 1
+#             if left <= right:
+#                 for i in range(bottom, top-1, -1):
+#                     matrix[i][left] = num
+#                     num += 1
+#                 left += 1
+#         return matrix
+
+
+# from math import factorial
+
+# class Solution:
+#     def getPermutation(self, n: int, position: int) -> str:
+#         position -= 1
+#         digits = list(range(1,n+1))
+#         result = ''
+#         digit = n - 1
+#         while digit > 0:
+#             chunk_size = factorial(digit)
+#             result += str(digits.pop(position // chunk_size))
+#             position = position % chunk_size
+#             digit -= 1
+#         return result + str(digits[0])
+
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+# class Solution:
+#     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+#         if head==None or head.next==None or k==0:
+#             return head
+#         l=1
+#         curr=head
+#         while curr.next:
+#             curr=curr.next
+#             l+=1
+#         r=k%l
+#         k=l-r
+#         curr.next=head
+#         while k>0:
+#             curr=curr.next
+#             k-=1
+#         head=curr.next
+#         curr.next = None
+#         return head
+
+
+
