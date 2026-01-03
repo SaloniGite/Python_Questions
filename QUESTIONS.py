@@ -2434,3 +2434,35 @@
 # lst = [1, 2, 3, 1, 2, 4, 5, 6, 4, 7]
 # print(remove_duplicates(lst))  
 
+# class Solution:
+#     def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
+#         dummy = ListNode(0)
+#         dummy.next = head
+#         prev_group = dummy
+
+#         while True:
+#             kth = self.get_kth_node(prev_group, k)
+#             if not kth:
+#                 break
+
+#             next_group = kth.next
+
+#             # Reverse group
+#             prev, curr = kth.next, prev_group.next
+#             while curr != next_group:
+#                 temp = curr.next
+#                 curr.next = prev
+#                 prev = curr
+#                 curr = temp
+
+#             temp = prev_group.next
+#             prev_group.next = kth
+#             prev_group = temp
+
+#         return dummy.next
+
+#     def get_kth_node(self, curr, k):
+#         while curr and k > 0:
+#             curr = curr.next
+#             k -= 1
+#         return curr
