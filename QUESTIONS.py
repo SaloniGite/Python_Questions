@@ -2523,3 +2523,29 @@
 
 #     return result
 
+
+# def preorderTraversal(root):
+#     result = []
+
+#     def preorder(node):
+#         if not node:
+#             return
+#         result.append(node.val)
+#         preorder(node.left)
+#         preorder(node.right)
+
+#     preorder(root)
+#     return result
+
+# def postorderTraversal(root):
+#     result = []
+
+#     def postorder(node):
+#         if not node:
+#             return
+#         postorder(node.left)
+#         postorder(node.right)
+#         result.append(node.val)
+
+#     postorder(root)
+#     return result
