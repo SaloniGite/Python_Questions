@@ -2559,3 +2559,32 @@
 #         total += root.left.val
 
 #     return total + sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right)
+
+# def isValidBST(root):
+#     def validate(node, low, high):
+#         if not node:
+#             return True
+#         if not (low < node.val < high):
+#             return False
+#         return (
+#             validate(node.left, low, node.val) and
+#             validate(node.right, node.val, high)
+#         )
+
+#     return validate(root, float('-inf'), float('inf'))
+
+
+# def kthSmallest(root, k):
+#     stack = []
+
+#     while True:
+#         while root:
+#             stack.append(root)
+#             root = root.left
+
+#         root = stack.pop()
+#         k -= 1
+#         if k == 0:
+#             return root.val
+
+#         root = root.right
