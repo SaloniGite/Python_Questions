@@ -2606,3 +2606,37 @@
 #     if not root:
 #         return 0
 #     return 1 + countNodes(root.left) + countNodes(root.right)
+
+
+# def sumNumbers(root):
+#     def dfs(node, current_sum):
+#         if not node:
+#             return 0
+
+#         current_sum = current_sum * 10 + node.val
+
+#         if not node.left and not node.right:
+#             return current_sum
+
+#         return dfs(node.left, current_sum) + dfs(node.right, current_sum)
+
+#     return dfs(root, 0)
+def binaryTreePaths(root):
+    paths = []
+
+    def dfs(node, path):
+        if not node:
+            return
+
+        path.append(str(node.val))
+
+        if not node.left and not node.right:
+            paths.append("->".join(path))
+        else:
+            dfs(node.left, path)
+            dfs(node.right, path)
+
+        path.pop()
+
+    dfs(root, [])
+    return paths
