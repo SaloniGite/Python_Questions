@@ -2674,3 +2674,21 @@ def binaryTreePaths(root):
 
 #     return node.val
 
+# from collections import deque
+
+# def isCompleteTree(root):
+#     queue = deque([root])
+#     end = False
+
+#     while queue:
+#         node = queue.popleft()
+
+#         if not node:
+#             end = True
+#         else:
+#             if end:
+#                 return False
+#             queue.append(node.left)
+#             queue.append(node.right)
+
+#     return True
