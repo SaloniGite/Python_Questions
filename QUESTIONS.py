@@ -2692,3 +2692,31 @@ def binaryTreePaths(root):
 #             queue.append(node.right)
 
 #     return True
+
+
+# def distanceBetweenNodes(root, p, q):
+#     def lca(node):
+#         if not node or node.val == p or node.val == q:
+#             return node
+
+#         left = lca(node.left)
+#         right = lca(node.right)
+
+#         if left and right:
+#             return node
+#         return left or right
+
+#     def depth(node, target, d):
+#         if not node:
+#             return -1
+#         if node.val == target:
+#             return d
+
+#         left = depth(node.left, target, d + 1)
+#         if left != -1:
+#             return left
+#         return depth(node.right, target, d + 1)
+
+#     ancestor = lca(root)
+#     return depth(ancestor, p, 0) + depth(ancestor, q, 0)
+
