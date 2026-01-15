@@ -2728,3 +2728,22 @@ def binaryTreePaths(root):
 #         return 1
 
 #     return countLeaves(root.left) + countLeaves(root.right)
+
+
+# def isSumTree(root):
+#     def dfs(node):
+#         if not node:
+#             return 0, True
+#         if not node.left and not node.right:
+#             return node.val, True
+
+#         left_sum, is_left = dfs(node.left)
+#         right_sum, is_right = dfs(node.right)
+
+#         total = left_sum + right_sum
+#         is_valid = is_left and is_right and node.val == total
+
+#         return node.val + total, is_valid
+
+#     _, result = dfs(root)
+#     return result
