@@ -2749,11 +2749,33 @@ def binaryTreePaths(root):
 #     return result
 
 
-def countLeaves(root):
+# def countLeaves(root):
+#     if not root:
+#         return 0
+
+#     if not root.left and not root.right:
+#         return 1
+
+#     return countLeaves(root.left) + countLeaves(root.right)
+
+from collections import deque
+
+def treeHeight(root):
     if not root:
         return 0
 
-    if not root.left and not root.right:
-        return 1
+    height = 0
+    queue = deque([root])
 
-    return countLeaves(root.left) + countLeaves(root.right)
+    while queue:
+        height += 1
+        for _ in range(len(queue)):
+            node = queue.popleft()
+
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+    return height
+
