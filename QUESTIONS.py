@@ -2758,24 +2758,45 @@ def binaryTreePaths(root):
 
 #     return countLeaves(root.left) + countLeaves(root.right)
 
-from collections import deque
+# from collections import deque
 
-def treeHeight(root):
+# def treeHeight(root):
+#     if not root:
+#         return 0
+
+#     height = 0
+#     queue = deque([root])
+
+#     while queue:
+#         height += 1
+#         for _ in range(len(queue)):
+#             node = queue.popleft()
+
+#             if node.left:
+#                 queue.append(node.left)
+#             if node.right:
+#                 queue.append(node.right)
+
+#     return height
+
+def hasPathSum(root, targetSum):
     if not root:
-        return 0
+        return False
 
-    height = 0
-    queue = deque([root])
+    stack = [(root, root.val)]
 
-    while queue:
-        height += 1
-        for _ in range(len(queue)):
-            node = queue.popleft()
+    while stack:
+        node, curr_sum = stack.pop()
 
-            if node.left:
-                queue.append(node.left)
-            if node.right:
-                queue.append(node.right)
+        if not node.left and not node.right:
+            if curr_sum == targetSum:
+                return True
 
-    return height
+        if node.right:
+            stack.append((node.right, curr_sum + node.right.val))
+        if node.left:
+            stack.append((node.left, curr_sum + node.left.val))
+
+    return False
+
 
