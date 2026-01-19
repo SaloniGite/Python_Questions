@@ -2779,24 +2779,52 @@ def binaryTreePaths(root):
 
 #     return height
 
-def hasPathSum(root, targetSum):
-    if not root:
-        return False
+# def hasPathSum(root, targetSum):
+#     if not root:
+#         return False
 
-    stack = [(root, root.val)]
+#     stack = [(root, root.val)]
 
-    while stack:
-        node, curr_sum = stack.pop()
+#     while stack:
+#         node, curr_sum = stack.pop()
 
-        if not node.left and not node.right:
-            if curr_sum == targetSum:
-                return True
+#         if not node.left and not node.right:
+#             if curr_sum == targetSum:
+#                 return True
 
-        if node.right:
-            stack.append((node.right, curr_sum + node.right.val))
-        if node.left:
-            stack.append((node.left, curr_sum + node.left.val))
+#         if node.right:
+#             stack.append((node.right, curr_sum + node.right.val))
+#         if node.left:
+#             stack.append((node.left, curr_sum + node.left.val))
+
+#     return False
+
+
+from collections import deque
+
+def isCousins(root, x, y):
+    queue = deque([(root, None)])
+
+    while queue:
+        size = len(queue)
+        parent_x = parent_y = None
+
+        for _ in range(size):
+            node, parent = queue.popleft()
+
+            if node.val == x:
+                parent_x = parent
+            if node.val == y:
+                parent_y = parent
+
+            if node.left:
+                queue.append((node.left, node))
+            if node.right:
+                queue.append((node.right, node))
+
+        if parent_x and parent_y:
+            return parent_x != parent_y
+        if parent_x or parent_y:
+            return False
 
     return False
-
-
