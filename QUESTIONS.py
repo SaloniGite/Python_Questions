@@ -2800,31 +2800,79 @@ def binaryTreePaths(root):
 #     return False
 
 
-from collections import deque
+# from collections import deque
 
-def isCousins(root, x, y):
-    queue = deque([(root, None)])
+# def isCousins(root, x, y):
+#     queue = deque([(root, None)])
 
-    while queue:
-        size = len(queue)
-        parent_x = parent_y = None
+#     while queue:
+#         size = len(queue)
+#         parent_x = parent_y = None
 
-        for _ in range(size):
-            node, parent = queue.popleft()
+#         for _ in range(size):
+#             node, parent = queue.popleft()
 
-            if node.val == x:
-                parent_x = parent
-            if node.val == y:
-                parent_y = parent
+#             if node.val == x:
+#                 parent_x = parent
+#             if node.val == y:
+#                 parent_y = parent
 
-            if node.left:
-                queue.append((node.left, node))
-            if node.right:
-                queue.append((node.right, node))
+#             if node.left:
+#                 queue.append((node.left, node))
+#             if node.right:
+#                 queue.append((node.right, node))
 
-        if parent_x and parent_y:
-            return parent_x != parent_y
-        if parent_x or parent_y:
-            return False
+#         if parent_x and parent_y:
+#             return parent_x != parent_y
+#         if parent_x or parent_y:
+#             return False
 
-    return False
+#     return False
+
+
+# from collections import defaultdict, deque
+
+# def distanceK(root, target, k):
+#     graph = defaultdict(list)
+
+#     def build(node, parent=None):
+#         if not node:
+#             return
+#         if parent:
+#             graph[node].append(parent)
+#             graph[parent].append(node)
+#         build(node.left, node)
+#         build(node.right, node)
+
+#     build(root)
+
+#     visited = set()
+#     queue = deque([(target, 0)])
+#     visited.add(target)
+#     res = []
+
+#     while queue:
+#         node, dist = queue.popleft()
+#         if dist == k:
+#             res.append(node.val)
+#         if dist > k:
+#             break
+#         for nei in graph[node]:
+#             if nei not in visited:
+#                 visited.add(nei)
+#                 queue.append((nei, dist + 1))
+
+#     return res
+
+
+# def isUnivalTree(root):
+#     val = root.val
+
+#     def dfs(node):
+#         if not node:
+#             return True
+#         if node.val != val:
+#             return False
+#         return dfs(node.left) and dfs(node.right)
+
+#     return dfs(root)
