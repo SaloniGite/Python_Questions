@@ -2919,3 +2919,22 @@ def binaryTreePaths(root):
 #         return isMirror(a.left, b.right) and isMirror(a.right, b.left)
 
 #     return isMirror(root.left, root.right)
+
+def findSecondMinimumValue(root):
+    min_val = root.val
+    second_min = float('inf')
+
+    def dfs(node):
+        nonlocal second_min
+        if not node:
+            return
+
+        if min_val < node.val < second_min:
+            second_min = node.val
+        elif node.val == min_val:
+            dfs(node.left)
+            dfs(node.right)
+
+    dfs(root)
+    return second_min if second_min < float('inf') else -1
+
