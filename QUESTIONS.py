@@ -2938,30 +2938,53 @@ def binaryTreePaths(root):
 #     dfs(root)
 #     return second_min if second_min < float('inf') else -1
 
-def closestValue(root, target):
-    closest = root.val
+# def closestValue(root, target):
+#     closest = root.val
 
-    while root:
-        if abs(root.val - target) < abs(closest - target):
-            closest = root.val
+#     while root:
+#         if abs(root.val - target) < abs(closest - target):
+#             closest = root.val
 
-        if target < root.val:
-            root = root.left
+#         if target < root.val:
+#             root = root.left
+#         else:
+#             root = root.right
+
+#     return closest
+
+# def closestValue(root, target):
+#     closest = root.val
+
+#     while root:
+#         if abs(root.val - target) < abs(closest - target):
+#             closest = root.val
+
+#         if target < root.val:
+#             root = root.left
+#         else:
+#             root = root.right
+
+#     return closest
+
+
+def largestBSTSubtree(root):
+    max_size = 0
+
+    def dfs(node):
+        nonlocal max_size
+        if not node:
+            return True, 0, float('inf'), float('-inf')
+        # isBST, size, minVal, maxVal
+
+        left_isBST, left_size, left_min, left_max = dfs(node.left)
+        right_isBST, right_size, right_min, right_max = dfs(node.right)
+
+        if left_isBST and right_isBST and left_max < node.val < right_min:
+            size = left_size + right_size + 1
+            max_size = max(max_size, size)
+            return True, size, min(left_min, node.val), max(right_max, node.val)
         else:
-            root = root.right
+            return False, 0, 0, 0
 
-    return closest
-
-def closestValue(root, target):
-    closest = root.val
-
-    while root:
-        if abs(root.val - target) < abs(closest - target):
-            closest = root.val
-
-        if target < root.val:
-            root = root.left
-        else:
-            root = root.right
-
-    return closest
+    dfs(root)
+    return max_size
