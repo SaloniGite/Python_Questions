@@ -2988,3 +2988,22 @@ def largestBSTSubtree(root):
 
     dfs(root)
     return max_size
+
+
+def canConvertToBST(root):
+    inorder = []
+
+    def dfs(node):
+        if not node:
+            return
+        dfs(node.left)
+        inorder.append(node.val)
+        dfs(node.right)
+
+    dfs(root)
+
+    for i in range(1, len(inorder)):
+        if inorder[i] <= inorder[i - 1]:
+            return False
+
+    return True
