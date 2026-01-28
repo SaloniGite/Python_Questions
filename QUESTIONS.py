@@ -3007,3 +3007,60 @@ def canConvertToBST(root):
             return False
 
     return True
+
+def isFullBinaryTree(root):
+    if not root:
+        return True
+
+    if not root.left and not root.right:
+        return True
+
+    if root.left and root.right:
+        return (
+            isFullBinaryTree(root.left) and
+            isFullBinaryTree(root.right)
+        )
+
+    return False
+
+from collections import deque
+
+def deepestLeavesSum(root):
+    queue = deque([root])
+    level_sum = 0
+
+    while queue:
+        level_sum = 0
+        for _ in range(len(queue)):
+            node = queue.popleft()
+            level_sum += node.val
+
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+    return level_sum
+
+def isPerfect(root):
+    def depth(node):
+        d = 0
+        while node:
+            d += 1
+            node = node.left
+        return d
+
+    def check(node, d, level=1):
+        if not node:
+            return True
+        if not node.left and not node.right:
+            return d == level
+        if not node.left or not node.right:
+            return False
+
+        return (
+            check(node.left, d, level + 1) and
+            check(node.right, d, level + 1)
+        )
+
+    return check(root, depth(root))
