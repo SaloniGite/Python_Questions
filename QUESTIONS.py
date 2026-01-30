@@ -3092,3 +3092,47 @@ def binaryTreePaths(root):
 #         return False
 
 #     return isSkewed(root.left or root.right)
+
+
+def boundaryTraversal(root):
+    if not root:
+        return []
+
+    result = [root.val]
+
+    def isLeaf(node):
+        return not node.left and not node.right
+
+    # Left boundary
+    def leftBoundary(node):
+        while node:
+            if not isLeaf(node):
+                result.append(node.val)
+            node = node.left if node.left else node.right
+
+    # Leaf nodes
+    def leaves(node):
+        if not node:
+            return
+        if isLeaf(node):
+            result.append(node.val)
+        leaves(node.left)
+        leaves(node.right)
+
+    # Right boundary
+    def rightBoundary(node):
+        stack = []
+        while node:
+            if not isLeaf(node):
+                stack.append(node.val)
+            node = node.right if node.right else node.left
+        while stack:
+            result.append(stack.pop())
+
+    leftBoundary(root.left)
+    leaves(root.left)
+    leaves(root.right)
+    rightBoundary(root.right)
+
+    return result
+
