@@ -3136,3 +3136,17 @@ def boundaryTraversal(root):
 
     return result
 
+def toSumTree(root):
+    def dfs(node):
+        if not node:
+            return 0
+
+        old_val = node.val
+        left_sum = dfs(node.left)
+        right_sum = dfs(node.right)
+
+        node.val = left_sum + right_sum
+        return node.val + old_val
+
+    dfs(root)
+    return root
