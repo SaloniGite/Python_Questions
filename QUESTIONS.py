@@ -3094,59 +3094,83 @@ def binaryTreePaths(root):
 #     return isSkewed(root.left or root.right)
 
 
-def boundaryTraversal(root):
+# def boundaryTraversal(root):
+#     if not root:
+#         return []
+
+#     result = [root.val]
+
+#     def isLeaf(node):
+#         return not node.left and not node.right
+
+#     # Left boundary
+#     def leftBoundary(node):
+#         while node:
+#             if not isLeaf(node):
+#                 result.append(node.val)
+#             node = node.left if node.left else node.right
+
+#     # Leaf nodes
+#     def leaves(node):
+#         if not node:
+#             return
+#         if isLeaf(node):
+#             result.append(node.val)
+#         leaves(node.left)
+#         leaves(node.right)
+
+#     # Right boundary
+#     def rightBoundary(node):
+#         stack = []
+#         while node:
+#             if not isLeaf(node):
+#                 stack.append(node.val)
+#             node = node.right if node.right else node.left
+#         while stack:
+#             result.append(stack.pop())
+
+#     leftBoundary(root.left)
+#     leaves(root.left)
+#     leaves(root.right)
+#     rightBoundary(root.right)
+
+#     return result
+
+# def toSumTree(root):
+#     def dfs(node):
+#         if not node:
+#             return 0
+
+#         old_val = node.val
+#         left_sum = dfs(node.left)
+#         right_sum = dfs(node.right)
+
+#         node.val = left_sum + right_sum
+#         return node.val + old_val
+
+#     dfs(root)
+#     return root
+
+
+from collections import deque
+
+def isSymmetric(root):
     if not root:
-        return []
+        return True
 
-    result = [root.val]
+    queue = deque([(root.left, root.right)])
 
-    def isLeaf(node):
-        return not node.left and not node.right
+    while queue:
+        a, b = queue.popleft()
 
-    # Left boundary
-    def leftBoundary(node):
-        while node:
-            if not isLeaf(node):
-                result.append(node.val)
-            node = node.left if node.left else node.right
+        if not a and not b:
+            continue
+        if not a or not b:
+            return False
+        if a.val != b.val:
+            return False
 
-    # Leaf nodes
-    def leaves(node):
-        if not node:
-            return
-        if isLeaf(node):
-            result.append(node.val)
-        leaves(node.left)
-        leaves(node.right)
+        queue.append((a.left, b.right))
+        queue.append((a.right, b.left))
 
-    # Right boundary
-    def rightBoundary(node):
-        stack = []
-        while node:
-            if not isLeaf(node):
-                stack.append(node.val)
-            node = node.right if node.right else node.left
-        while stack:
-            result.append(stack.pop())
-
-    leftBoundary(root.left)
-    leaves(root.left)
-    leaves(root.right)
-    rightBoundary(root.right)
-
-    return result
-
-def toSumTree(root):
-    def dfs(node):
-        if not node:
-            return 0
-
-        old_val = node.val
-        left_sum = dfs(node.left)
-        right_sum = dfs(node.right)
-
-        node.val = left_sum + right_sum
-        return node.val + old_val
-
-    dfs(root)
-    return root
+    return True
