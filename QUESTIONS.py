@@ -3152,25 +3152,36 @@ def binaryTreePaths(root):
 #     return root
 
 
-from collections import deque
+# from collections import deque
 
-def isSymmetric(root):
-    if not root:
-        return True
+# def isSymmetric(root):
+#     if not root:
+#         return True
 
-    queue = deque([(root.left, root.right)])
+#     queue = deque([(root.left, root.right)])
 
-    while queue:
-        a, b = queue.popleft()
+#     while queue:
+#         a, b = queue.popleft()
 
-        if not a and not b:
-            continue
-        if not a or not b:
-            return False
-        if a.val != b.val:
-            return False
+#         if not a and not b:
+#             continue
+#         if not a or not b:
+#             return False
+#         if a.val != b.val:
+#             return False
 
-        queue.append((a.left, b.right))
-        queue.append((a.right, b.left))
+#         queue.append((a.left, b.right))
+#         queue.append((a.right, b.left))
 
-    return True
+#     return True
+
+
+
+
+
+def heightFromNode(node):
+    if not node:
+        return 0
+    return 1 + max(heightFromNode(node.left), heightFromNode(node.right))
+
+
