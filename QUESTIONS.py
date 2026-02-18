@@ -3179,9 +3179,32 @@ def binaryTreePaths(root):
 
 
 
-def heightFromNode(node):
-    if not node:
-        return 0
-    return 1 + max(heightFromNode(node.left), heightFromNode(node.right))
+# def heightFromNode(node):
+#     if not node:
+#         return 0
+#     return 1 + max(heightFromNode(node.left), heightFromNode(node.right))
 
+# def areMirror(a, b):
+#     if not a and not b:
+#         return True
+#     if not a or not b:
+#         return False
+#     if a.val != b.val:
+#         return False
+
+#     return areMirror(a.left, b.right) and areMirror(a.right, b.left)
+
+
+
+# def longestPath(root):
+#     if not root:
+#         return []
+
+#     left = longestPath(root.left)
+#     right = longestPath(root.right)
+
+#     if len(left) > len(right):
+#         return [root.val] + left
+#     else:
+#         return [root.val] + right
 
