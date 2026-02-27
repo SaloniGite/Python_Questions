@@ -3208,19 +3208,44 @@ def binaryTreePaths(root):
 #     else:
 #         return [root.val] + right
 
-def countGreaterThanAncestors(root):
-    def dfs(node, max_so_far):
-        if not node:
-            return 0
+# def countGreaterThanAncestors(root):
+#     def dfs(node, max_so_far):
+#         if not node:
+#             return 0
 
-        count = 0
-        if node.val > max_so_far:
-            count = 1
-            max_so_far = node.val
+#         count = 0
+#         if node.val > max_so_far:
+#             count = 1
+#             max_so_far = node.val
 
-        count += dfs(node.left, max_so_far)
-        count += dfs(node.right, max_so_far)
+#         count += dfs(node.left, max_so_far)
+#         count += dfs(node.right, max_so_far)
 
-        return count
+#         return count
 
-    return dfs(root, float('-inf'))
+#     return dfs(root, float('-inf'))
+
+
+from collections import deque
+
+def sumAtDistanceK(root, k):
+    if not root:
+        return 0
+
+    queue = deque([root])
+    level = 0
+
+    while queue:
+        if level == k:
+            return sum(node.val for node in queue)
+
+        for _ in range(len(queue)):
+            node = queue.popleft()
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+        level += 1
+
+    return 0
