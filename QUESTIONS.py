@@ -3226,26 +3226,38 @@ def binaryTreePaths(root):
 #     return dfs(root, float('-inf'))
 
 
-from collections import deque
+# from collections import deque
 
-def sumAtDistanceK(root, k):
-    if not root:
-        return 0
+# def sumAtDistanceK(root, k):
+#     if not root:
+#         return 0
 
-    queue = deque([root])
-    level = 0
+#     queue = deque([root])
+#     level = 0
 
-    while queue:
-        if level == k:
-            return sum(node.val for node in queue)
+#     while queue:
+#         if level == k:
+#             return sum(node.val for node in queue)
 
-        for _ in range(len(queue)):
-            node = queue.popleft()
-            if node.left:
-                queue.append(node.left)
-            if node.right:
-                queue.append(node.right)
+#         for _ in range(len(queue)):
+#             node = queue.popleft()
+#             if node.left:
+#                 queue.append(node.left)
+#             if node.right:
+#                 queue.append(node.right)
 
-        level += 1
+#         level += 1
 
-    return 0
+#     return 0
+
+
+# from collections import Counter
+
+# def firstNonRepeating(s):
+#     freq = Counter(s)
+
+#     for ch in s:
+#         if freq[ch] == 1:
+#             return ch
+
+#     return None
