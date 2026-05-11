@@ -452,7 +452,9 @@
 
 # Q47
 # a = "Saloni"
-# print(a.upper())
+# s_upper = a.upper()
+# print(s_upper)
+# # print(a.upper())
 # print(a[1])
 
 # Q48
@@ -511,7 +513,7 @@
 # for i in a:
 #     rev = i+rev
 #     copy += i
-# print("the reversed str is",rev)
+# print("the reversed str i34s",rev)
 # print("the lower case is ",a.lower())
 # print("the upper case is ",a.upper())
 # print("the lenght of strs is ",len(a))
@@ -3261,3 +3263,20 @@ def binaryTreePaths(root):
 #             return ch
 
 #     return None
+
+def find_duplicate(nums):
+    slow = nums[0]
+    fast = nums[0]
+    
+    while True:
+        slow = nums[slow]
+        fast = nums[nums[fast]]
+        if slow == fast:
+            break
+    
+    slow = nums[0]
+    while slow != fast:
+        slow = nums[slow]
+        fast = nums[fast]
+    
+    return slow
