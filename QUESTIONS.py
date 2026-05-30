@@ -3264,19 +3264,33 @@ def binaryTreePaths(root):
 
 #     return None
 
-def find_duplicate(nums):
-    slow = nums[0]
-    fast = nums[0]
+# def find_duplicate(nums):
+#     slow = nums[0]
+#     fast = nums[0]
     
-    while True:
-        slow = nums[slow]
-        fast = nums[nums[fast]]
-        if slow == fast:
-            break
+#     while True:
+#         slow = nums[slow]
+#         fast = nums[nums[fast]]
+#         if slow == fast:
+#             break
     
-    slow = nums[0]
-    while slow != fast:
-        slow = nums[slow]
-        fast = nums[fast]
+#     slow = nums[0]
+#     while slow != fast:
+#         slow = nums[slow]
+#         fast = nums[fast]
     
-    return slow
+#     return slow
+
+def merge_intervals(intervals):
+    intervals.sort()
+    merged = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last = merged[-1]
+        
+        if current[0] <= last[1]:
+            last[1] = max(last[1], current[1])
+        else:
+            merged.append(current)
+    
+    return merged
