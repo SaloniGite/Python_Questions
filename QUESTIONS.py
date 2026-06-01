@@ -3281,16 +3281,66 @@ def binaryTreePaths(root):
     
 #     return slow
 
-def merge_intervals(intervals):
-    intervals.sort()
-    merged = [intervals[0]]
+# def merge_intervals(intervals):
+#     intervals.sort()
+#     merged = [intervals[0]]
     
-    for current in intervals[1:]:
-        last = merged[-1]
+#     for current in intervals[1:]:
+#         last = merged[-1]
         
-        if current[0] <= last[1]:
-            last[1] = max(last[1], current[1])
-        else:
-            merged.append(current)
+#         if current[0] <= last[1]:
+#             last[1] = max(last[1], current[1])
+#         else:
+#             merged.append(current)
     
-    return merged
+#     return merged
+
+# def subarray_sum(nums, target):
+#     start = 0
+#     current = 0
+    
+#     for end in range(len(nums)):
+#         current += nums[end]
+        
+#         while current > target:
+#             current -= nums[start]
+#             start += 1
+        
+#         if current == target:
+#             return nums[start:end+1]
+    
+#     return []
+
+def max_area(height):
+    left, right = 0, len(height) - 1
+    max_water = 0
+    
+    while left < right:
+        h = min(height[left], height[right])
+        width = right - left
+        max_water = max(max_water, h * width)
+        
+        if height[left] < height[right]:
+            left += 1
+        else:
+            right -= 1
+    
+    return max_water
+
+
+
+def subarray_sum(nums, target):
+    start = 0
+    current = 0
+    
+    for end in range(len(nums)):
+        current += nums[end]
+        
+        while current > target:
+            current -= nums[start]
+            start += 1
+        
+        if current == target:
+            return nums[start:end+1]
+    
+    return []
